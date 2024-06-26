@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tets-task_rougeGame</title>
+</head>
+<style>
+    * {
+        box-sizing: border-box;
+    }
+    body {
+        font-family: Arial, sans-serif;
+        text-align: center;
+    }
+
+    .field {
+        position: relative;
+        width: 800px;
+        height: 480px;
+        margin: 0 auto;
+        position: relative;
+        background-color: #333;
+    }
+    .sword {
+        background-image: url("public/assets/tile-SW.png");
+        background-size: cover;
+    }
+    .potion {
+        background-image: url("public/assets/tile-HP.png");
+        background-size: cover;
+    }
+    .hero {
+        background-image: url("public/assets/tile-E.png");
+        background-size: cover;
+        z-index : 1000;
+    }
+    .enemy {
+        background-image: url("public/assets/tile-P.png");
+        background-size: cover;
+    }
+    .tile {
+        width: 20px;
+        height: 20px;
+        position: absolute;
+    }
+
+    .wall {
+        background-image: url("public/assets/tile-W.png");
+
+        background-size: cover;
+    }
+
+    .floor {
+        background-image: url("public/assets/tile-.png");
+        background-size: cover;
+    }
+    .top-bar {
+        display: flex;
+        font-size: 16px;
+        justify-content: center;
+    }
+    .top-bar_text {
+        font-size: 16px;
+        font-weight: 300;
+        align-self: center;
+    }
+
+
+    .hero .status-bar {
+    position: absolute;
+    top: -10px;
+    left: 0;
+    width: 100%;
+    height: 5px;
+    display: flex;
+    justify-content: space-between;
+    }
+
+    .hero .health {
+        height: 5px;
+        background-color: green;
+    }
+
+    .hero .strength {
+        height: 5px;
+        background-color: orange;
+    }
+
+    .sword, .potion, .enemy {
+        background-color: red;
+    }
+
+    .moves-counter {
+        font-size: 16px;
+        margin-top: 10px;
+    }
+    .end-game {
+        margin: 0;
+        padding: 0;
+        position: absolute;
+        height: 100vh;
+        width: 100vw;
+        background-color: #333;
+        z-index: 10000;
+        display: flex;
+        /* justify-content: center;
+        align-items: center; */
+        color: white;
+        display: none;
+    }
+
+</style>
+<body>
+    <div class="end-game">Game over</div>
+    <h1>Game</h1>
+    <div class="field-box">
+        <div class="field"></div>
+        <div class="status-bar">
+            <div class="moves" id="moves-counter">Moves: 20</div>
+        </div>
+    </div>
+
+    <script src="./scripts/index.js"></script>
+</body>
+</html>
